@@ -10,11 +10,11 @@ Download manual necessário:
 * `build_deps/cuda_8.0.27.1_linux.run`: patch do Cuda 8.0 RC para GCC 5.4
 * `build_deps/cudnn-8.0-linux-x64-v5.1.tgz`: cuDNN 5.1 para Cuda 8.0
 
-Procedimento (script `run.sh`):
+Procedimento (script `0.1x/run.sh`):
 
     ./setup.sh
 
-    docker build -t tensorflow_build/ubuntu1604:0.10 .
+    docker build -t tensorflow_build/ubuntu1604:0.10 -f 0.10/Dockerfile .
 
     docker run -t \
       --name tensorflow_build \

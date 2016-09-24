@@ -4,3 +4,4 @@
 /build_deps/jdk-8u102-linux-x64.tar.gz
 /build_deps/bazel-0.3.1-installer-linux-x86_64.sh
 /tensorflow-0.10.0-py2-none-linux_x86_64.whl
+/tensorflow-0.11.0rc0-py2-none-linux_x86_64.whl
