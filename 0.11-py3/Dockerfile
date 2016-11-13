@@ -7,10 +7,10 @@ RUN apt-get update && \
     apt-get install -y \
         --no-install-recommends \
         build-essential \
-        python-dev \
-        python-wheel \
-        python-setuptools \
-        python-numpy \
+        python3-dev \
+        python3-wheel \
+        python3-setuptools \
+        python3-numpy \
         swig \
         zlib1g-dev \
         unzip \
@@ -19,7 +19,9 @@ RUN apt-get update && \
         ca-certificates \
         rsync && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    cd /usr/bin && \
+    ln -s python3.5 python
 
 COPY build_deps/ /build_deps/
 
@@ -41,7 +43,7 @@ RUN useradd -m tensorflow && \
 
 USER tensorflow
 
-COPY 0.11/build.sh /home/tensorflow
+COPY 0.11-py3/build.sh /home/tensorflow
 COPY 0.11/5143.patch /home/tensorflow
 
 CMD ["/bin/bash"]

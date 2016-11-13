@@ -14,7 +14,7 @@ docker run -t \
   /bin/bash --login /home/tensorflow/build.sh
 
 docker cp \
-  tensorflow_0.11:/home/tensorflow/tensorflow-0.11.0rc0-py2-none-linux_x86_64.whl \
+  tensorflow_0.11:/home/tensorflow/tensorflow-0.11.0-py2-none-linux_x86_64.whl \
   .
 
 docker rm tensorflow_0.11

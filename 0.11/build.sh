@@ -7,6 +7,8 @@ git clone https://github.com/tensorflow/tensorflow.git -b r0.11 ~/tensorflow-0.1
 
 cd ~/tensorflow-0.11
 
+git apply ../5143.patch
+
 export PYTHON_BIN_PATH=/usr/bin/python
 export TF_NEED_GCP=0
 export TF_NEED_HDFS=1
@@ -23,4 +25,4 @@ bazel build -j 4 -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_p
 
 bazel-bin/tensorflow/tools/pip_package/build_pip_package $HOME
 
-mv ~/tensorflow-0.11.0rc0-py2-none-{any,linux_x86_64}.whl
+mv ~/tensorflow-0.11.0-py2-none-{any,linux_x86_64}.whl
