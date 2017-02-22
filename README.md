@@ -1,6 +1,6 @@
 # Build do TensorFlow
 
-Build do TensorFlow 0.11 no Docker com Ubuntu 16.04, GCC 5.4, Python 2.7 ou 3.5, Cuda 8.0 e cuDNN 5.1.
+Build do TensorFlow 1.0.0 no Docker com Ubuntu 16.04, GCC 5.4, Python 3.5, Cuda 8.0 e cuDNN 5.1.
 
 (referência para o TensorFlow 0.10)
 
@@ -14,5 +14,5 @@ Download manual necessário:
 
 Procedimento:
 
-*  `0.11/run.sh`: constrói pacote `tensorflow-0.11.0-py2-none-linux_x86_64.whl`
-*  `0.11-py3/run.sh`: constrói pacote `tensorflow-0.11.0-py3-none-linux_x86_64.whl`
+*  `1.0.0-gpu/run.sh`: constrói pacote `tensorflow-gpu-1.0.0-cp35-cp35m-linux_x86_64.whl`
+*  `1.0.0-cpu/run.sh`: constrói pacote `tensorflow-cpu-1.0.0-cp35-cp35m-linux_x86_64.whl`

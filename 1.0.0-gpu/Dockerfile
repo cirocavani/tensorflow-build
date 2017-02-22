@@ -43,6 +43,6 @@ RUN useradd -m tensorflow && \
 
 USER tensorflow
 
-COPY 1.0.0/build.sh /home/tensorflow
+COPY 1.0.0-gpu/build.sh /home/tensorflow
 
 CMD ["/bin/bash"]

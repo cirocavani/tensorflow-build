@@ -3,7 +3,7 @@ set -eu
 
 rm -rf ~/tensorflow-1.0
 
-git clone https://github.com/tensorflow/tensorflow.git -b r1.0 ~/tensorflow-1.0
+git clone https://github.com/tensorflow/tensorflow.git -b r1.0 --depth 1 ~/tensorflow-1.0
 
 cd ~/tensorflow-1.0
 
@@ -20,9 +20,11 @@ export TF_CUDA_VERSION=8.0
 export CUDA_TOOLKIT_PATH=/usr/local/cuda-8.0
 export TF_CUDNN_VERSION=5
 export CUDNN_INSTALL_PATH=/usr/local/cuda-8.0
-export TF_CUDA_COMPUTE_CAPABILITIES=3.0
+export TF_CUDA_COMPUTE_CAPABILITIES=3.0,3.5
 echo "/usr/lib/python3/dist-packages" | ./configure
 
 bazel build -j 4 -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 
 bazel-bin/tensorflow/tools/pip_package/build_pip_package $HOME
+
+mv ~/tensorflow{,-gpu}-1.0.0-cp35-cp35m-linux_x86_64.whl
