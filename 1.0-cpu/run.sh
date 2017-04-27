@@ -3,6 +3,8 @@ set -eu
 
 cd `dirname "$0"`/..
 
+rm -rf tensorflow-cpu-1.0.1-cp35-cp35m-linux_x86_64.whl
+
 ./setup.sh
 
 docker build -t tensorflow_cpu/build/ubuntu1604:1.0 -f 1.0-cpu/Dockerfile .

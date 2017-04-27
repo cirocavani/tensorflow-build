@@ -8,13 +8,32 @@ http://cirocavani.github.io/post/compilacao-do-tensorflow-0.10-para-linux-com-gp
 
 ...
 
+## Setup
+
 Download manual necessário:
 
 * `build_deps/cudnn-8.0-linux-x64-v5.1.tgz`: cuDNN 5.1 para Cuda 8.0 [ [Download](https://developer.nvidia.com/rdp/cudnn-download) ]
 
-Procedimento:
+## Builds
 
 *  `1.1-gpu/run.sh`: constrói pacote `tensorflow-gpu-1.1.0-cp35-cp35m-linux_x86_64.whl`
 *  `1.1-cpu/run.sh`: constrói pacote `tensorflow-cpu-1.1.0-cp35-cp35m-linux_x86_64.whl`
 *  `1.0-gpu/run.sh`: constrói pacote `tensorflow-gpu-1.0.1-cp35-cp35m-linux_x86_64.whl`
 *  `1.0-cpu/run.sh`: constrói pacote `tensorflow-cpu-1.0.1-cp35-cp35m-linux_x86_64.whl`
+
+## Install
+
+```sh
+# Python install
+curl -k -L -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh -b -f -p conda
+conda/bin/conda update --all
+
+# TensorFlow install
+conda/bin/conda create -y -p tensorflow-gpu python=3.5
+cp tensorflow{-gpu,}-1.1.0-cp35-cp35m-linux_x86_64.whl
+tensorflow-gpu/bin/pip install tensorflow-1.1.0-cp35-cp35m-linux_x86_64.whl
+
+tensorflow-gpu/bin/python -c 'import tensorflow as tf; print(tf.Session().run(tf.constant("Hello, World!")))'
+#> b'Hello, World!'
+```
