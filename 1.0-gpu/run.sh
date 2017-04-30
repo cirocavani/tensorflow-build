@@ -3,7 +3,7 @@ set -eu
 
 cd `dirname "$0"`/..
 
-rm -rf tensorflow-gpu-1.0.1-cp35-cp35m-linux_x86_64.whl
+rm -rf tensorflow_gpu-1.0.1-cp35-cp35m-linux_x86_64.whl
 
 ./setup.sh
 
@@ -16,7 +16,7 @@ docker run -t \
   /bin/bash --login /home/tensorflow/build.sh
 
 docker cp \
-  tensorflow_gpu_1.0:/home/tensorflow/tensorflow-gpu-1.0.1-cp35-cp35m-linux_x86_64.whl \
+  tensorflow_gpu_1.0:/home/tensorflow/tensorflow_gpu-1.0.1-cp35-cp35m-linux_x86_64.whl \
   .
 
 docker rm tensorflow_gpu_1.0

@@ -16,10 +16,12 @@ Download manual necessário:
 
 ## Builds
 
-*  `1.1-gpu/run.sh`: constrói pacote `tensorflow-gpu-1.1.0-cp35-cp35m-linux_x86_64.whl`
-*  `1.1-cpu/run.sh`: constrói pacote `tensorflow-cpu-1.1.0-cp35-cp35m-linux_x86_64.whl`
-*  `1.0-gpu/run.sh`: constrói pacote `tensorflow-gpu-1.0.1-cp35-cp35m-linux_x86_64.whl`
-*  `1.0-cpu/run.sh`: constrói pacote `tensorflow-cpu-1.0.1-cp35-cp35m-linux_x86_64.whl`
+*  `master-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.2.0a0-cp35-cp35m-linux_x86_64.whl`
+*  `master-cpu/run.sh`: constrói pacote `tensorflow-1.2.0a0-cp35-cp35m-linux_x86_64.whl`
+*  `1.1-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.1.0-cp35-cp35m-linux_x86_64.whl`
+*  `1.1-cpu/run.sh`: constrói pacote `tensorflow-1.1.0-cp35-cp35m-linux_x86_64.whl`
+*  `1.0-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.0.1-cp35-cp35m-linux_x86_64.whl`
+*  `1.0-cpu/run.sh`: constrói pacote `tensorflow-1.0.1-cp35-cp35m-linux_x86_64.whl`
 
 ## Install
 
@@ -31,9 +33,10 @@ conda/bin/conda update --all
 
 # TensorFlow install
 conda/bin/conda create -y -p tensorflow-gpu python=3.5
-cp tensorflow{-gpu,}-1.1.0-cp35-cp35m-linux_x86_64.whl
-tensorflow-gpu/bin/pip install tensorflow-1.1.0-cp35-cp35m-linux_x86_64.whl
+tensorflow-gpu/bin/pip install tensorflow_gpu-1.1.0-cp35-cp35m-linux_x86_64.whl
 
-tensorflow-gpu/bin/python -c 'import tensorflow as tf; print(tf.Session().run(tf.constant("Hello, World!")))'
+tensorflow-gpu/bin/python -c \
+'import tensorflow as tf; print(tf.__version__); print(tf.Session().run(tf.constant("Hello, World!")))'
+#> 1.1.0
 #> b'Hello, World!'
 ```

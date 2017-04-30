@@ -1,14 +1,18 @@
 #!/bin/bash
 set -eu
 
-rm -rf ~/tensorflow-1.1
+rm -rf ~/tensorflow-master
 
-git clone https://github.com/tensorflow/tensorflow.git -b r1.1 --depth 1 ~/tensorflow-1.1
+git clone https://github.com/tensorflow/tensorflow.git --depth 1 ~/tensorflow-master
 
-cd ~/tensorflow-1.1
+cd ~/tensorflow-master
+
+tensorflow/tools/ci_build/update_version.sh 1.2.0-alpha
 
 export PYTHON_BIN_PATH=/usr/bin/python
+export CC_OPT_FLAGS="-march=native"
 export TF_ENABLE_XLA=0
+export TF_NEED_VERBS=0
 export TF_NEED_JEMALLOC=1
 export TF_NEED_GCP=0
 export TF_NEED_HDFS=1

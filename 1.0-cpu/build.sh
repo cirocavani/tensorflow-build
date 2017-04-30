@@ -19,5 +19,3 @@ echo "/usr/lib/python3/dist-packages" | ./configure
 bazel build -j 4 -c opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
 
 bazel-bin/tensorflow/tools/pip_package/build_pip_package $HOME
-
-mv ~/tensorflow{,-cpu}-1.0.1-cp35-cp35m-linux_x86_64.whl
