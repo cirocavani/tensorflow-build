@@ -1,13 +1,13 @@
 #!/bin/bash
 set -eu
 
-rm -rf ~/tensorflow-master
+rm -rf ~/tensorflow
 
-git clone https://github.com/tensorflow/tensorflow.git --depth 1 ~/tensorflow-master
+git clone https://github.com/tensorflow/tensorflow.git --depth 1 ~/tensorflow
 
-cd ~/tensorflow-master
+cd ~/tensorflow
 
-tensorflow/tools/ci_build/update_version.sh 1.2.0-alpha
+tensorflow/tools/ci_build/update_version.sh 1.3.0-alpha
 
 export PYTHON_BIN_PATH=/usr/bin/python
 export CC_OPT_FLAGS="-march=native"
@@ -25,6 +25,7 @@ export CUDA_TOOLKIT_PATH=/usr/local/cuda-8.0
 export TF_CUDNN_VERSION=5
 export CUDNN_INSTALL_PATH=/usr/local/cuda-8.0
 export TF_CUDA_COMPUTE_CAPABILITIES=3.5
+export TF_NEED_MKL=0
 echo "/usr/lib/python3/dist-packages" | ./configure
 
 bazel build -j 4 -c opt --copt=-march=native --config=cuda //tensorflow/tools/pip_package:build_pip_package

@@ -1,11 +1,11 @@
 #!/bin/bash
 set -eu
 
-rm -rf ~/tensorflow-1.1
+rm -rf ~/tensorflow
 
-git clone https://github.com/tensorflow/tensorflow.git -b r1.1 --depth 1 ~/tensorflow-1.1
+git clone https://github.com/tensorflow/tensorflow.git -b r1.1 --depth 1 ~/tensorflow
 
-cd ~/tensorflow-1.1
+cd ~/tensorflow
 
 export PYTHON_BIN_PATH=/usr/bin/python
 export TF_ENABLE_XLA=1
