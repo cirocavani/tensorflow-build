@@ -19,6 +19,7 @@ export TF_NEED_HDFS=1
 export TF_NEED_OPENCL=0
 export TF_NEED_CUDA=0
 export TF_NEED_MKL=0
+export TF_NEED_MPI=0
 echo "/usr/lib/python3/dist-packages" | ./configure
 
 bazel build -j 4 -c opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package

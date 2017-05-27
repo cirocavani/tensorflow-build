@@ -26,6 +26,7 @@ export TF_CUDNN_VERSION=5
 export CUDNN_INSTALL_PATH=/usr/local/cuda-8.0
 export TF_CUDA_COMPUTE_CAPABILITIES=3.5
 export TF_NEED_MKL=0
+export TF_NEED_MPI=0
 echo "/usr/lib/python3/dist-packages" | ./configure
 
 bazel build -j 4 -c opt --copt=-march=native --config=cuda //tensorflow/tools/pip_package:build_pip_package
