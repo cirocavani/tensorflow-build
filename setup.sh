@@ -22,11 +22,11 @@ if [ ! -f build_deps/jdk-8u131-linux-x64.tar.gz ]; then
         -o build_deps/jdk-8u131-linux-x64.tar.gz
 fi
 
-if [ ! -f build_deps/bazel-0.4.5-installer-linux-x86_64.sh ]; then
+if [ ! -f build_deps/bazel-0.5.1-installer-linux-x86_64.sh ]; then
     curl -k -L \
-        https://github.com/bazelbuild/bazel/releases/download/0.4.5/bazel-0.4.5-installer-linux-x86_64.sh \
-        -o build_deps/bazel-0.4.5-installer-linux-x86_64.sh
+        https://github.com/bazelbuild/bazel/releases/download/0.5.1/bazel-0.5.1-installer-linux-x86_64.sh \
+        -o build_deps/bazel-0.5.1-installer-linux-x86_64.sh
 fi
 
 chmod +x build_deps/cuda_8.0.61_375.26_linux-run
-chmod +x build_deps/bazel-0.4.5-installer-linux-x86_64.sh
+chmod +x build_deps/bazel-0.5.1-installer-linux-x86_64.sh
