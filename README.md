@@ -18,8 +18,8 @@ Download manual necessário:
 
 *  `master-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.3.0a0-cp35-cp35m-linux_x86_64.whl`
 *  `master-cpu/run.sh`: constrói pacote `tensorflow-1.3.0a0-cp35-cp35m-linux_x86_64.whl`
-*  `1.2-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.2.0rc1-cp35-cp35m-linux_x86_64.whl`
-*  `1.2-cpu/run.sh`: constrói pacote `tensorflow-1.2.0rc1-cp35-cp35m-linux_x86_64.whl`
+*  `1.2-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.2.0rc2-cp35-cp35m-linux_x86_64.whl`
+*  `1.2-cpu/run.sh`: constrói pacote `tensorflow-1.2.0rc2-cp35-cp35m-linux_x86_64.whl`
 *  `1.1-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.1.0-cp35-cp35m-linux_x86_64.whl`
 *  `1.1-cpu/run.sh`: constrói pacote `tensorflow-1.1.0-cp35-cp35m-linux_x86_64.whl`
 *  `1.0-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.0.1-cp35-cp35m-linux_x86_64.whl`
