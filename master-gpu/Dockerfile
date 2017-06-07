@@ -7,10 +7,7 @@ RUN apt-get update && \
     apt-get install -y \
         --no-install-recommends \
         build-essential \
-        python3-dev \
-        python3-wheel \
-        python3-setuptools \
-        python3-numpy \
+        python3 \
         swig \
         zlib1g-dev \
         unzip \
@@ -35,6 +32,9 @@ RUN tar zxf /build_deps/jdk-8u131-linux-x64.tar.gz -C /opt --no-same-owner && \
 RUN export JAVA_HOME=/opt/jdk1.8.0_131 && \
     /build_deps/bazel-0.5.1-installer-linux-x86_64.sh --prefix=/opt/bazel-0.5.1 && \
     echo 'export PATH=$PATH:/opt/bazel-0.5.1/bin' > /etc/profile.d/bazel.sh
+
+RUN bash /build_deps/Miniconda3-4.3.21-Linux-x86_64.sh -b -f -p /opt/conda && \
+    /opt/conda/bin/conda install -y numpy
 
 RUN rm -rf /build_deps
 

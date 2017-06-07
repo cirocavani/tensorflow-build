@@ -3,7 +3,7 @@ set -eu
 
 cd `dirname "$0"`/..
 
-TF_WHEEL=tensorflow-1.3.0a0-cp35-cp35m-linux_x86_64.whl
+TF_WHEEL=tensorflow-1.3.0a0-cp36-cp36m-linux_x86_64.whl
 
 rm -rf $TF_WHEEL
 
