@@ -36,8 +36,8 @@ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p conda
 conda/bin/conda update --all
 
 # TensorFlow install
-conda/bin/conda create -y -p tensorflow-gpu python=3.5
-tensorflow-gpu/bin/pip install tensorflow_gpu-1.1.0-cp35-cp35m-linux_x86_64.whl
+conda/bin/conda create -y -p tensorflow-gpu python=3.6
+tensorflow-gpu/bin/pip install tensorflow_gpu-1.1.0-cp36-cp36m-linux_x86_64.whl
 
 tensorflow-gpu/bin/python -c \
 'import tensorflow as tf; print(tf.__version__); print(tf.Session().run(tf.constant("Hello, World!")))'
