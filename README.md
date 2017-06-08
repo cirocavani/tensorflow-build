@@ -1,6 +1,6 @@
 # Build do TensorFlow
 
-Build do TensorFlow Master, 1.2 e 1.1 no Docker com Ubuntu 16.04, GCC 5.4, Python 3.6, Cuda 8.0 e cuDNN 5.1.
+Build do TensorFlow Master, 1.2 e 1.1 no Docker com Ubuntu 16.04, GCC 5.4, Python 3.6, Cuda 8.0 e cuDNN 6.0.
 
 (referência para o TensorFlow 0.10)
 
@@ -12,7 +12,7 @@ http://cirocavani.github.io/post/compilacao-do-tensorflow-0.10-para-linux-com-gp
 
 Download manual necessário:
 
-* `build_deps/cudnn-8.0-linux-x64-v5.1.tgz`: cuDNN 5.1 para Cuda 8.0 [ [Download](https://developer.nvidia.com/rdp/cudnn-download) ]
+* `build_deps/cudnn-8.0-linux-x64-v6.0.tgz`: cuDNN 6.0 para Cuda 8.0 [ [Download](https://developer.nvidia.com/rdp/cudnn-download) ]
 
 ## Builds
 

@@ -17,7 +17,7 @@ export TF_NEED_CUDA=1
 export GCC_HOST_COMPILER_PATH=/usr/bin/gcc
 export TF_CUDA_VERSION=8.0
 export CUDA_TOOLKIT_PATH=/usr/local/cuda-8.0
-export TF_CUDNN_VERSION=5
+export TF_CUDNN_VERSION=6
 export CUDNN_INSTALL_PATH=/usr/local/cuda-8.0
 export TF_CUDA_COMPUTE_CAPABILITIES=3.5
 echo "/opt/conda/lib/python3.6/site-packages" | ./configure

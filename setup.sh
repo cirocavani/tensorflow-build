@@ -3,8 +3,8 @@ set -eu
 
 cd `dirname "$0"`
 
-if [ ! -f build_deps/cudnn-8.0-linux-x64-v5.1.tgz ]; then
-    echo "Necessário cuDNN 5.1 para Cuda 8.0."
+if [ ! -f build_deps/cudnn-8.0-linux-x64-v6.0.tgz ]; then
+    echo "Necessário cuDNN 6.0 para Cuda 8.0."
     echo "https://developer.nvidia.com/rdp/cudnn-download"
     exit 1
 fi

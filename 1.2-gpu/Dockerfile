@@ -23,7 +23,7 @@ RUN apt-get update && \
 COPY build_deps/ /build_deps/
 
 RUN /build_deps/cuda_8.0.61_375.26_linux-run --silent --toolkit --override && \
-    tar zxf /build_deps/cudnn-8.0-linux-x64-v5.1.tgz -C /usr/local/cuda-8.0 --strip-components=1
+    tar zxf /build_deps/cudnn-8.0-linux-x64-v6.0.tgz -C /usr/local/cuda-8.0 --strip-components=1
 
 RUN tar zxf /build_deps/jdk-8u131-linux-x64.tar.gz -C /opt --no-same-owner && \
     echo 'export JAVA_HOME=/opt/jdk1.8.0_131' > /etc/profile.d/java.sh && \
