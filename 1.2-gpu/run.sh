@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-cd `dirname "$0"`/..
+cd $(dirname "$0")/..
 
 TF_WHEEL=tensorflow_gpu-1.2.0rc2-cp36-cp36m-linux_x86_64.whl
 

@@ -27,12 +27,11 @@ Download manual necessário:
 
 ```sh
 # Python install
-curl -k -L -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh -b -f -p conda
-conda/bin/conda update --all
+curl -k -L -O https://repo.continuum.io/miniconda/Miniconda3-4.3.21-Linux-x86_64.sh
+bash Miniconda3-4.3.21-Linux-x86_64.sh -b -f -p tensorflow-gpu
+tensorflow-gpu/bin/conda update --all
 
 # TensorFlow install
-conda/bin/conda create -y -p tensorflow-gpu python=3.6
 tensorflow-gpu/bin/pip install tensorflow_gpu-1.1.0-cp36-cp36m-linux_x86_64.whl
 
 tensorflow-gpu/bin/python -c \

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-cd `dirname "$0"`
+cd $(dirname "$0")
 
 if [ ! -f build_deps/cudnn-8.0-linux-x64-v6.0.tgz ]; then
     echo "Necessário cuDNN 6.0 para Cuda 8.0."
