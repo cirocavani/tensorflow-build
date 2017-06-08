@@ -7,7 +7,7 @@ git clone https://github.com/tensorflow/tensorflow.git -b r1.1 --depth 1 ~/tenso
 
 cd ~/tensorflow
 
-export PYTHON_BIN_PATH=/usr/bin/python
+export PYTHON_BIN_PATH=/opt/conda/bin/python
 export TF_ENABLE_XLA=1
 export TF_NEED_JEMALLOC=1
 export TF_NEED_GCP=0
@@ -20,7 +20,7 @@ export CUDA_TOOLKIT_PATH=/usr/local/cuda-8.0
 export TF_CUDNN_VERSION=5
 export CUDNN_INSTALL_PATH=/usr/local/cuda-8.0
 export TF_CUDA_COMPUTE_CAPABILITIES=3.5
-echo "/usr/lib/python3/dist-packages" | ./configure
+echo "/opt/conda/lib/python3.6/site-packages" | ./configure
 
 bazel build -j 4 -c opt --copt=-march=native --config=cuda //tensorflow/tools/pip_package:build_pip_package
 
