@@ -21,7 +21,7 @@ RUN apt-get update && \
     ln -s python3.5 python
 
 COPY build_deps/jdk-8u131-linux-x64.tar.gz /build_deps/
-COPY build_deps/bazel-0.5.1-installer-linux-x86_64.sh /build_deps/
+COPY build_deps/bazel-0.5.2-installer-linux-x86_64.sh /build_deps/
 COPY build_deps/Miniconda3-4.3.21-Linux-x86_64.sh /build_deps/
 
 RUN tar zxf /build_deps/jdk-8u131-linux-x64.tar.gz -C /opt --no-same-owner && \
@@ -29,8 +29,8 @@ RUN tar zxf /build_deps/jdk-8u131-linux-x64.tar.gz -C /opt --no-same-owner && \
     echo 'export PATH=$PATH:/opt/jdk1.8.0_131/bin' >> /etc/profile.d/java.sh
 
 RUN export JAVA_HOME=/opt/jdk1.8.0_131 && \
-    /build_deps/bazel-0.5.1-installer-linux-x86_64.sh --prefix=/opt/bazel-0.5.1 && \
-    echo 'export PATH=$PATH:/opt/bazel-0.5.1/bin' > /etc/profile.d/bazel.sh
+    /build_deps/bazel-0.5.2-installer-linux-x86_64.sh --prefix=/opt/bazel-0.5.2 && \
+    echo 'export PATH=$PATH:/opt/bazel-0.5.2/bin' > /etc/profile.d/bazel.sh
 
 RUN bash /build_deps/Miniconda3-4.3.21-Linux-x86_64.sh -b -f -p /opt/conda && \
     /opt/conda/bin/conda install -y numpy

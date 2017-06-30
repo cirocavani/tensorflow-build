@@ -1,6 +1,6 @@
 # Build do TensorFlow
 
-Build do TensorFlow Master, 1.2 e 1.1 no Docker com Ubuntu 16.04, GCC 5.4, Python 3.6, Cuda 8.0 e cuDNN 6.0.
+Build do TensorFlow Master, 1.2.1 e 1.1 no Docker com Ubuntu 16.04, GCC 5.4, Python 3.6, Cuda 8.0 e cuDNN 6.0.
 
 (referência para o TensorFlow 0.10)
 
@@ -18,8 +18,8 @@ Download manual necessário:
 
 *  `master-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.3.0a0-cp36-cp36m-linux_x86_64.whl`
 *  `master-cpu/run.sh`: constrói pacote `tensorflow-1.3.0a0-cp36-cp36m-linux_x86_64.whl`
-*  `1.2-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl`
-*  `1.2-cpu/run.sh`: constrói pacote `tensorflow-1.2.0-cp36-cp36m-linux_x86_64.whl`
+*  `1.2-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.2.1-cp36-cp36m-linux_x86_64.whl`
+*  `1.2-cpu/run.sh`: constrói pacote `tensorflow-1.2.1-cp36-cp36m-linux_x86_64.whl`
 *  `1.1-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.1.0-cp36-cp36m-linux_x86_64.whl`
 *  `1.1-cpu/run.sh`: constrói pacote `tensorflow-1.1.0-cp36-cp36m-linux_x86_64.whl`
 
@@ -32,10 +32,10 @@ bash Miniconda3-4.3.21-Linux-x86_64.sh -b -f -p tensorflow-gpu
 tensorflow-gpu/bin/conda update --all
 
 # TensorFlow install
-tensorflow-gpu/bin/pip install tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
+tensorflow-gpu/bin/pip install tensorflow_gpu-1.2.1-cp36-cp36m-linux_x86_64.whl
 
 tensorflow-gpu/bin/python -c \
 'import tensorflow as tf; print(tf.__version__); print(tf.Session().run(tf.constant("Hello, World!")))'
-#> 1.2.0
+#> 1.2.1
 #> b'Hello, World!'
 ```
