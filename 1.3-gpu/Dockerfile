@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
         --no-install-recommends \
+        libcuda1-375 \
         build-essential \
         python3 \
         swig \
