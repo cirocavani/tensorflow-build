@@ -1,7 +1,7 @@
 /build_deps/cuda_8.0.61_375.26_linux-run
 /build_deps/cudnn-8.0-linux-x64-v6.0.tgz
 /build_deps/jdk-8u131-linux-x64.tar.gz
-/build_deps/bazel-0.5.2-installer-linux-x86_64.sh
+/build_deps/bazel-0.5.3-installer-linux-x86_64.sh
 /build_deps/Miniconda3-4.3.21-Linux-x86_64.sh
 /tensorflow-1.2.1-cp36-cp36m-linux_x86_64.whl
 /tensorflow_gpu-1.2.1-cp36-cp36m-linux_x86_64.whl
