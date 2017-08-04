@@ -15,11 +15,11 @@ if [ ! -f build_deps/cuda_8.0.61_375.26_linux-run ]; then
         -o build_deps/cuda_8.0.61_375.26_linux-run
 fi
 
-if [ ! -f build_deps/jdk-8u131-linux-x64.tar.gz ]; then
+if [ ! -f build_deps/jdk-8u144-linux-x64.tar.gz ]; then
     curl -k -L \
         -H "Cookie: oraclelicense=accept-securebackup-cookie" \
-        http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz \
-        -o build_deps/jdk-8u131-linux-x64.tar.gz
+        http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz \
+        -o build_deps/jdk-8u144-linux-x64.tar.gz
 fi
 
 if [ ! -f build_deps/bazel-0.5.3-installer-linux-x86_64.sh ]; then
