@@ -7,18 +7,13 @@ RUN apt-get update && \
     apt-get install -y \
         --no-install-recommends \
         build-essential \
-        python3 \
-        swig \
-        zlib1g-dev \
         unzip \
         file \
         git \
         ca-certificates \
         rsync && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    cd /usr/bin && \
-    ln -s python3.5 python
+    rm -rf /var/lib/apt/lists/*
 
 COPY build_deps/jdk-8u144-linux-x64.tar.gz /build_deps/
 COPY build_deps/bazel-0.5.3-installer-linux-x86_64.sh /build_deps/
@@ -33,6 +28,7 @@ RUN export JAVA_HOME=/opt/jdk1.8.0_144 && \
     echo 'export PATH=$PATH:/opt/bazel-0.5.3/bin' > /etc/profile.d/bazel.sh
 
 RUN bash /build_deps/Miniconda3-4.3.21-Linux-x86_64.sh -b -f -p /opt/conda && \
+    echo 'export PATH=$PATH:/opt/conda/bin' > /etc/profile.d/conda.sh && \
     /opt/conda/bin/conda install -y numpy
 
 RUN rm -rf /build_deps
