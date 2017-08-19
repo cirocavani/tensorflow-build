@@ -1,6 +1,6 @@
 # Build do TensorFlow
 
-Build do TensorFlow Master, 1.3 e 1.2.1 no Docker com Ubuntu 16.04, GCC 5.4, Python 3.6, Cuda 8.0 e cuDNN 6.0.
+Build do TensorFlow Master, 1.3 e 1.2.1 no Docker com Ubuntu 16.04, GCC 5.4, Python 3.6, Cuda 8.0 e cuDNN 8.0.
 
 (referência para o TensorFlow 0.10)
 
@@ -18,8 +18,8 @@ Download manual necessário:
 
 *  `master-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.4.0a0-cp36-cp36m-linux_x86_64.whl`
 *  `master-cpu/run.sh`: constrói pacote `tensorflow-1.4.0a0-cp36-cp36m-linux_x86_64.whl`
-*  `1.3-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.3.0rc2-cp36-cp36m-linux_x86_64.whl`
-*  `1.3-cpu/run.sh`: constrói pacote `tensorflow-1.3.0rc2-cp36-cp36m-linux_x86_64.whl`
+*  `1.3-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.3.0-cp36-cp36m-linux_x86_64.whl`
+*  `1.3-cpu/run.sh`: constrói pacote `tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl`
 *  `1.2-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.2.1-cp36-cp36m-linux_x86_64.whl`
 *  `1.2-cpu/run.sh`: constrói pacote `tensorflow-1.2.1-cp36-cp36m-linux_x86_64.whl`
 
