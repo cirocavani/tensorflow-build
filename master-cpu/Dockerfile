@@ -16,7 +16,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY build_deps/jdk-8u144-linux-x64.tar.gz /build_deps/
-COPY build_deps/bazel-0.5.3-installer-linux-x86_64.sh /build_deps/
+COPY build_deps/bazel-0.5.4-installer-linux-x86_64.sh /build_deps/
 COPY build_deps/Miniconda3-4.3.21-Linux-x86_64.sh /build_deps/
 
 RUN tar zxf /build_deps/jdk-8u144-linux-x64.tar.gz -C /opt --no-same-owner && \
@@ -24,8 +24,8 @@ RUN tar zxf /build_deps/jdk-8u144-linux-x64.tar.gz -C /opt --no-same-owner && \
     echo 'export PATH=$PATH:/opt/jdk1.8.0_144/bin' >> /etc/profile.d/java.sh
 
 RUN export JAVA_HOME=/opt/jdk1.8.0_144 && \
-    /build_deps/bazel-0.5.3-installer-linux-x86_64.sh --prefix=/opt/bazel-0.5.3 && \
-    echo 'export PATH=$PATH:/opt/bazel-0.5.3/bin' > /etc/profile.d/bazel.sh
+    /build_deps/bazel-0.5.4-installer-linux-x86_64.sh --prefix=/opt/bazel-0.5.4 && \
+    echo 'export PATH=$PATH:/opt/bazel-0.5.4/bin' > /etc/profile.d/bazel.sh
 
 RUN bash /build_deps/Miniconda3-4.3.21-Linux-x86_64.sh -b -f -p /opt/conda && \
     echo 'export PATH=$PATH:/opt/conda/bin' > /etc/profile.d/conda.sh && \
