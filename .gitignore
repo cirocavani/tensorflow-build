@@ -1,4 +1,5 @@
 /build_deps/cuda_8.0.61_375.26_linux-run
+/build_deps/cuda_8.0.61.2_linux-run
 /build_deps/cudnn-8.0-linux-x64-v6.0.tgz
 /build_deps/jdk-8u144-linux-x64.tar.gz
 /build_deps/bazel-0.5.4-installer-linux-x86_64.sh

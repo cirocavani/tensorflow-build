@@ -15,6 +15,12 @@ if [ ! -f build_deps/cuda_8.0.61_375.26_linux-run ]; then
         -o build_deps/cuda_8.0.61_375.26_linux-run
 fi
 
+if [ ! -f build_deps/cuda_8.0.61.2_linux-run ]; then
+    curl -k -L \
+        https://developer.nvidia.com/compute/cuda/8.0/Prod2/patches/2/cuda_8.0.61.2_linux-run \
+        -o build_deps/cuda_8.0.61.2_linux-run
+fi
+
 if [ ! -f build_deps/jdk-8u144-linux-x64.tar.gz ]; then
     curl -k -L \
         -H "Cookie: oraclelicense=accept-securebackup-cookie" \
@@ -35,5 +41,6 @@ if [ ! -f build_deps/Miniconda3-4.3.21-Linux-x86_64.sh ]; then
 fi
 
 chmod +x build_deps/cuda_8.0.61_375.26_linux-run
+chmod +x build_deps/cuda_8.0.61.2_linux-run
 chmod +x build_deps/bazel-0.5.4-installer-linux-x86_64.sh
 chmod +x build_deps/Miniconda3-4.3.21-Linux-x86_64.sh
