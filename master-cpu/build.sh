@@ -12,6 +12,7 @@ python tensorflow/tools/ci_build/update_version.py --version 1.4.0-alpha
 export PYTHON_BIN_PATH=/opt/conda/bin/python
 export CC_OPT_FLAGS="-march=native"
 export TF_ENABLE_XLA=0
+export TF_NEED_GDR=0
 export TF_NEED_VERBS=0
 export TF_NEED_JEMALLOC=1
 export TF_NEED_GCP=0
