@@ -18,8 +18,8 @@ Download manual necessário:
 
 *  `master-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.4.0a0-cp36-cp36m-linux_x86_64.whl`
 *  `master-cpu/run.sh`: constrói pacote `tensorflow-1.4.0a0-cp36-cp36m-linux_x86_64.whl`
-*  `1.3-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.3.0-cp36-cp36m-linux_x86_64.whl`
-*  `1.3-cpu/run.sh`: constrói pacote `tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl`
+*  `1.3-gpu/run.sh`: constrói pacote `tensorflow_gpu-1.3.1-cp36-cp36m-linux_x86_64.whl`
+*  `1.3-cpu/run.sh`: constrói pacote `tensorflow-1.3.1-cp36-cp36m-linux_x86_64.whl`
 
 ## Install
 
@@ -30,10 +30,10 @@ bash Miniconda3-4.3.21-Linux-x86_64.sh -b -f -p tensorflow-gpu
 tensorflow-gpu/bin/conda update --all
 
 # TensorFlow install
-tensorflow-gpu/bin/pip install tensorflow_gpu-1.3.0-cp36-cp36m-linux_x86_64.whl
+tensorflow-gpu/bin/pip install tensorflow_gpu-1.3.1-cp36-cp36m-linux_x86_64.whl
 
 tensorflow-gpu/bin/python -c \
 'import tensorflow as tf; print(tf.__version__); print(tf.Session().run(tf.constant("Hello, World!")))'
-#> 1.3.0
+#> 1.3.1
 #> b'Hello, World!'
 ```
