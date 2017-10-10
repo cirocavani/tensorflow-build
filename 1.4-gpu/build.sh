@@ -3,11 +3,9 @@ set -eu
 
 rm -rf ~/tensorflow
 
-git clone https://github.com/tensorflow/tensorflow.git --depth 1 ~/tensorflow
+git clone https://github.com/tensorflow/tensorflow.git -b r1.4 --depth 1 ~/tensorflow
 
 cd ~/tensorflow
-
-python tensorflow/tools/ci_build/update_version.py --version 1.5.0-alpha
 
 export PYTHON_BIN_PATH=/opt/conda/bin/python
 export CC_OPT_FLAGS="-march=native"
