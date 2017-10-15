@@ -15,9 +15,9 @@ export TF_NEED_VERBS=0
 export TF_NEED_JEMALLOC=1
 export TF_NEED_GCP=0
 export TF_NEED_HDFS=0
+export TF_NEED_S3=0
 export TF_NEED_OPENCL=0
 export TF_NEED_CUDA=0
-export TF_NEED_MKL=0
 export TF_NEED_MPI=0
 echo "/opt/conda/lib/python3.6/site-packages" | ./configure
 
