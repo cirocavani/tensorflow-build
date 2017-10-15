@@ -28,10 +28,10 @@ if [ ! -f build_deps/jdk-8u144-linux-x64.tar.gz ]; then
         -o build_deps/jdk-8u144-linux-x64.tar.gz
 fi
 
-if [ ! -f build_deps/bazel-0.5.4-installer-linux-x86_64.sh ]; then
+if [ ! -f build_deps/bazel-0.6.1-installer-linux-x86_64.sh ]; then
     curl -k -L \
-        https://github.com/bazelbuild/bazel/releases/download/0.5.4/bazel-0.5.4-installer-linux-x86_64.sh \
-        -o build_deps/bazel-0.5.4-installer-linux-x86_64.sh
+        https://github.com/bazelbuild/bazel/releases/download/0.6.1/bazel-0.6.1-installer-linux-x86_64.sh \
+        -o build_deps/bazel-0.6.1-installer-linux-x86_64.sh
 fi
 
 if [ ! -f build_deps/Miniconda3-4.3.21-Linux-x86_64.sh ]; then
@@ -42,5 +42,5 @@ fi
 
 chmod +x build_deps/cuda_8.0.61_375.26_linux-run
 chmod +x build_deps/cuda_8.0.61.2_linux-run
-chmod +x build_deps/bazel-0.5.4-installer-linux-x86_64.sh
+chmod +x build_deps/bazel-0.6.1-installer-linux-x86_64.sh
 chmod +x build_deps/Miniconda3-4.3.21-Linux-x86_64.sh
