@@ -30,6 +30,6 @@ export TF_CUDA_COMPUTE_CAPABILITIES=3.5
 export TF_NEED_MPI=0
 echo "/opt/conda/lib/python3.6/site-packages" | ./configure
 
-bazel build -j 4 -c opt --copt=-march=native --config=cuda //tensorflow/tools/pip_package:build_pip_package
+bazel build -j 4 --copt=-march=native --config=cuda --config=monolithic //tensorflow/tools/pip_package:build_pip_package
 
 bazel-bin/tensorflow/tools/pip_package/build_pip_package $HOME --gpu
