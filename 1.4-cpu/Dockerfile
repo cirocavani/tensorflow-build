@@ -15,11 +15,11 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY build_deps/jdk-8u144-linux-x64.tar.gz /build_deps/
+COPY build_deps/jdk-8u152-linux-x64.tar.gz /build_deps/
 COPY build_deps/bazel-0.7.0-installer-linux-x86_64.sh /build_deps/
 COPY build_deps/Miniconda3-4.3.30-Linux-x86_64.sh /build_deps/
 
-RUN tar zxf /build_deps/jdk-8u144-linux-x64.tar.gz -C /opt --no-same-owner && \
+RUN tar zxf /build_deps/jdk-8u152-linux-x64.tar.gz -C /opt --no-same-owner && \
     echo 'export JAVA_HOME=/opt/jdk1.8.0_144' > /etc/profile.d/java.sh && \
     echo 'export PATH=$PATH:/opt/jdk1.8.0_144/bin' >> /etc/profile.d/java.sh
 
