@@ -34,13 +34,13 @@ if [ ! -f build_deps/bazel-0.7.0-installer-linux-x86_64.sh ]; then
         -o build_deps/bazel-0.7.0-installer-linux-x86_64.sh
 fi
 
-if [ ! -f build_deps/Miniconda3-4.3.27.1-Linux-x86_64.sh ]; then
+if [ ! -f build_deps/Miniconda3-4.3.30-Linux-x86_64.sh ]; then
     curl -k -L \
-        https://repo.continuum.io/miniconda/Miniconda3-4.3.27.1-Linux-x86_64.sh \
-        -o build_deps/Miniconda3-4.3.27.1-Linux-x86_64.sh
+        https://repo.continuum.io/miniconda/Miniconda3-4.3.30-Linux-x86_64.sh \
+        -o build_deps/Miniconda3-4.3.30-Linux-x86_64.sh
 fi
 
 chmod +x build_deps/cuda_8.0.61_375.26_linux-run
 chmod +x build_deps/cuda_8.0.61.2_linux-run
 chmod +x build_deps/bazel-0.7.0-installer-linux-x86_64.sh
-chmod +x build_deps/Miniconda3-4.3.27.1-Linux-x86_64.sh
+chmod +x build_deps/Miniconda3-4.3.30-Linux-x86_64.sh
