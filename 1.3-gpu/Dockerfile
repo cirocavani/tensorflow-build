@@ -22,10 +22,10 @@ RUN /build_deps/cuda_8.0.61_375.26_linux-run --silent --toolkit --override && \
     tar zxf /build_deps/cudnn-8.0-linux-x64-v6.0.tgz -C /usr/local/cuda-8.0 --strip-components=1
 
 RUN tar zxf /build_deps/jdk-8u152-linux-x64.tar.gz -C /opt --no-same-owner && \
-    echo 'export JAVA_HOME=/opt/jdk1.8.0_144' > /etc/profile.d/java.sh && \
-    echo 'export PATH=$PATH:/opt/jdk1.8.0_144/bin' >> /etc/profile.d/java.sh
+    echo 'export JAVA_HOME=/opt/jdk1.8.0_152' > /etc/profile.d/java.sh && \
+    echo 'export PATH=$PATH:/opt/jdk1.8.0_152/bin' >> /etc/profile.d/java.sh
 
-RUN export JAVA_HOME=/opt/jdk1.8.0_144 && \
+RUN export JAVA_HOME=/opt/jdk1.8.0_152 && \
     /build_deps/bazel-0.7.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.7.0 && \
     echo 'export PATH=$PATH:/opt/bazel-0.7.0/bin' > /etc/profile.d/bazel.sh
 
