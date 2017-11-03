@@ -12,7 +12,7 @@ http://cirocavani.github.io/post/compilacao-do-tensorflow-0.10-para-linux-com-gp
 
 Download manual necessário:
 
-* `deps/cudnn-8.0-linux-x64-v6.0.tgz`: cuDNN 6.0 para Cuda 8.0 [ [Download](https://developer.nvidia.com/rdp/cudnn-download) ]
+* `_deps/cudnn-8.0-linux-x64-v6.0.tgz`: cuDNN 6.0 para Cuda 8.0 [ [Download](https://developer.nvidia.com/rdp/cudnn-download) ]
 
 ## Builds
 
