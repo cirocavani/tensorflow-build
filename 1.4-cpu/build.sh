@@ -21,6 +21,6 @@ export TF_NEED_CUDA=0
 export TF_NEED_MPI=0
 echo "/opt/conda/lib/python3.6/site-packages" | ./configure
 
-bazel build -j 4 -c opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
+bazel build -j 4 --config=opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
 
 bazel-bin/tensorflow/tools/pip_package/build_pip_package $HOME
