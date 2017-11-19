@@ -9,6 +9,10 @@ rm -rf $TF_WHEEL
 
 ./setup.sh
 
+if [ ! -z "$(docker ps -a | grep tensorflow_gpu_master)" ]; then
+    docker rm tensorflow_gpu_master
+fi
+
 docker build -t \
     tensorflow_gpu/build/ubuntu1604:master \
     -f master-gpu/Dockerfile \

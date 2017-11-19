@@ -18,6 +18,8 @@ export TF_NEED_JEMALLOC=1
 export TF_NEED_GCP=0
 export TF_NEED_HDFS=0
 export TF_NEED_S3=0
+export TF_NEED_OPENCL_SYCL=0
+export TF_NEED_COMPUTECPP=0
 export TF_NEED_OPENCL=0
 export TF_NEED_CUDA=1
 export TF_CUDA_CLANG=0
@@ -30,6 +32,11 @@ export TF_CUDA_COMPUTE_CAPABILITIES=3.5
 export TF_NEED_MPI=0
 echo "/opt/conda/lib/python3.6/site-packages" | ./configure
 
-bazel build -j 4 --config=opt --copt=-march=native --config=cuda --config=monolithic //tensorflow/tools/pip_package:build_pip_package
+bazel build -j 4 \
+    --config=opt \
+    --copt=-march=native \
+    --config=cuda \
+    --config=monolithic \
+    //tensorflow/tools/pip_package:build_pip_package
 
 bazel-bin/tensorflow/tools/pip_package/build_pip_package $HOME --gpu

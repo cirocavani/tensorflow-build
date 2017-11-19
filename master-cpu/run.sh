@@ -9,6 +9,10 @@ rm -rf $TF_WHEEL
 
 ./setup.sh
 
+if [ ! -z "$(docker ps -a | grep tensorflow_cpu_master)" ]; then
+    docker rm tensorflow_cpu_master
+fi
+
 docker build -t \
     tensorflow_cpu/build/ubuntu1604:master \
     -f master-cpu/Dockerfile \
