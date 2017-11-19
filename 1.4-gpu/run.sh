@@ -3,11 +3,15 @@ set -eu
 
 cd $(dirname "$0")/..
 
-TF_WHEEL=tensorflow_gpu-1.4.0-cp36-cp36m-linux_x86_64.whl
+TF_WHEEL=tensorflow_gpu-1.4.1-cp36-cp36m-linux_x86_64.whl
 
 rm -rf $TF_WHEEL
 
 ./setup.sh
+
+if [ ! -z "$(docker ps -a | grep tensorflow_gpu_1.4)" ]; then
+    docker rm tensorflow_gpu_1.4
+fi
 
 docker build -t \
     tensorflow_gpu/build/ubuntu1604:1.4 \

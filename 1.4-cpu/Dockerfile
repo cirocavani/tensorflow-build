@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV BASH_ENV /etc/profile
+SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -15,29 +17,29 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY _deps/jdk-8u152-linux-x64.tar.gz /_deps/
-COPY _deps/bazel-0.7.0-installer-linux-x86_64.sh /_deps/
-COPY _deps/Miniconda3-4.3.30-Linux-x86_64.sh /_deps/
-
-RUN tar zxf /_deps/jdk-8u152-linux-x64.tar.gz -C /opt --no-same-owner && \
+COPY _deps/jdk-8u152-linux-x64.tar.gz .
+RUN tar zxf jdk-8u152-linux-x64.tar.gz -C /opt --no-same-owner && \
     echo 'export JAVA_HOME=/opt/jdk1.8.0_152' > /etc/profile.d/java.sh && \
-    echo 'export PATH=$PATH:/opt/jdk1.8.0_152/bin' >> /etc/profile.d/java.sh
+    echo 'export PATH=$PATH:/opt/jdk1.8.0_152/bin' >> /etc/profile.d/java.sh && \
+    rm jdk-8u152-linux-x64.tar.gz
 
-RUN export JAVA_HOME=/opt/jdk1.8.0_152 && \
-    /_deps/bazel-0.7.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.7.0 && \
-    echo 'export PATH=$PATH:/opt/bazel-0.7.0/bin' > /etc/profile.d/bazel.sh
+COPY _deps/bazel-0.7.0-installer-linux-x86_64.sh .
+RUN bash bazel-0.7.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.7.0 && \
+    echo 'export PATH=$PATH:/opt/bazel-0.7.0/bin' > /etc/profile.d/bazel.sh && \
+    rm bazel-0.7.0-installer-linux-x86_64.sh
 
-RUN bash /_deps/Miniconda3-4.3.30-Linux-x86_64.sh -b -f -p /opt/conda && \
+COPY _deps/Miniconda3-4.3.30-Linux-x86_64.sh .
+RUN bash Miniconda3-4.3.30-Linux-x86_64.sh -b -f -p /opt/conda && \
     echo 'export PATH=$PATH:/opt/conda/bin' > /etc/profile.d/conda.sh && \
-    /opt/conda/bin/conda install -y numpy
-
-RUN rm -rf /_deps
+    /opt/conda/bin/conda install -q -y numpy && \
+    rm Miniconda3-4.3.30-Linux-x86_64.sh
 
 RUN useradd -m tensorflow && \
     passwd -d tensorflow
 
 USER tensorflow
+WORKDIR /home/tensorflow
 
-COPY 1.4-cpu/build.sh /home/tensorflow
+COPY 1.4-cpu/build.sh .
 
 CMD ["/bin/bash"]
