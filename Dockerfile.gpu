@@ -17,6 +17,14 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+COPY _deps/cuda_8.0.61_375.26_linux-run .
+COPY _deps/cuda_8.0.61.2_linux-run .
+COPY _deps/cudnn-8.0-linux-x64-v6.0.tgz .
+RUN ./cuda_8.0.61_375.26_linux-run --silent --toolkit --override && \
+    ./cuda_8.0.61.2_linux-run --silent --accept-eula && \
+    tar zxf cudnn-8.0-linux-x64-v6.0.tgz -C /usr/local/cuda-8.0 --strip-components=1 && \
+    rm cuda_8.0.61_375.26_linux-run cuda_8.0.61.2_linux-run cudnn-8.0-linux-x64-v6.0.tgz
+
 COPY _deps/jdk-8u152-linux-x64.tar.gz .
 RUN tar zxf jdk-8u152-linux-x64.tar.gz -C /opt --no-same-owner && \
     echo 'export JAVA_HOME=/opt/jdk1.8.0_152' > /etc/profile.d/java.sh && \
@@ -39,7 +47,5 @@ RUN useradd -m tensorflow && \
 
 USER tensorflow
 WORKDIR /home/tensorflow
-
-COPY 1.4-cpu/build.sh .
 
 CMD ["/bin/bash"]

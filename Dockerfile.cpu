@@ -40,6 +40,4 @@ RUN useradd -m tensorflow && \
 USER tensorflow
 WORKDIR /home/tensorflow
 
-COPY master-cpu/build.sh .
-
 CMD ["/bin/bash"]

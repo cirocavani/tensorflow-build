@@ -26,4 +26,4 @@ bazel build -j 4 \
     --copt=-march=native \
     //tensorflow/tools/pip_package:build_pip_package
 
-bazel-bin/tensorflow/tools/pip_package/build_pip_package $HOME
+bazel-bin/tensorflow/tools/pip_package/build_pip_package $BUILD_MOUNT
