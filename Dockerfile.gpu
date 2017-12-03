@@ -31,10 +31,10 @@ RUN tar zxf jdk-8u152-linux-x64.tar.gz -C /opt --no-same-owner && \
     echo 'export PATH=$PATH:/opt/jdk1.8.0_152/bin' >> /etc/profile.d/java.sh && \
     rm jdk-8u152-linux-x64.tar.gz
 
-COPY _deps/bazel-0.7.0-installer-linux-x86_64.sh .
-RUN bash bazel-0.7.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.7.0 && \
-    echo 'export PATH=$PATH:/opt/bazel-0.7.0/bin' > /etc/profile.d/bazel.sh && \
-    rm bazel-0.7.0-installer-linux-x86_64.sh
+COPY _deps/bazel-0.8.0-installer-linux-x86_64.sh .
+RUN bash bazel-0.8.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.8.0 && \
+    echo 'export PATH=$PATH:/opt/bazel-0.8.0/bin' > /etc/profile.d/bazel.sh && \
+    rm bazel-0.8.0-installer-linux-x86_64.sh
 
 COPY _deps/Miniconda3-4.3.30-Linux-x86_64.sh .
 RUN bash Miniconda3-4.3.30-Linux-x86_64.sh -b -f -p /opt/conda && \
