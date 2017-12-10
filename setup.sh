@@ -30,10 +30,10 @@ if [ ! -f _deps/jdk-8u152-linux-x64.tar.gz ]; then
         -o _deps/jdk-8u152-linux-x64.tar.gz
 fi
 
-if [ ! -f _deps/bazel-0.8.0-installer-linux-x86_64.sh ]; then
+if [ ! -f _deps/bazel-0.8.1-installer-linux-x86_64.sh ]; then
     curl -k -L \
-        https://github.com/bazelbuild/bazel/releases/download/0.8.0/bazel-0.8.0-installer-linux-x86_64.sh \
-        -o _deps/bazel-0.8.0-installer-linux-x86_64.sh
+        https://github.com/bazelbuild/bazel/releases/download/0.8.1/bazel-0.8.1-installer-linux-x86_64.sh \
+        -o _deps/bazel-0.8.1-installer-linux-x86_64.sh
 fi
 
 if [ ! -f _deps/Miniconda3-4.3.30-Linux-x86_64.sh ]; then

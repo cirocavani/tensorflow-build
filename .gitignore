@@ -2,7 +2,7 @@
 /_deps/cuda_8.0.61.2_linux-run
 /_deps/cudnn-8.0-linux-x64-v6.0.tgz
 /_deps/jdk-8u152-linux-x64.tar.gz
-/_deps/bazel-0.8.0-installer-linux-x86_64.sh
+/_deps/bazel-0.8.1-installer-linux-x86_64.sh
 /_deps/Miniconda3-4.3.30-Linux-x86_64.sh
 /1.4-cpu/tensorflow-1.4.1-cp36-cp36m-linux_x86_64.whl
 /1.4-gpu/tensorflow_gpu-1.4.1-cp36-cp36m-linux_x86_64.whl
