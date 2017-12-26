@@ -28,6 +28,7 @@ export TF_CUDNN_VERSION=6
 export CUDNN_INSTALL_PATH=/usr/local/cuda-8.0
 export TF_CUDA_COMPUTE_CAPABILITIES=3.5
 export TF_NEED_MPI=0
+export TF_SET_ANDROID_WORKSPACE=""
 echo "/opt/conda/lib/python3.6/site-packages" | ./configure
 
 bazel build -j 4 \

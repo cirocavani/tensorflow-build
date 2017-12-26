@@ -23,6 +23,7 @@ export TF_NEED_COMPUTECPP=0
 export TF_NEED_OPENCL=0
 export TF_NEED_CUDA=0
 export TF_NEED_MPI=0
+export TF_SET_ANDROID_WORKSPACE=""
 echo "/opt/conda/lib/python3.6/site-packages" | ./configure
 
 bazel build -j 4 \
