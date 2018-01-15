@@ -25,10 +25,10 @@ RUN ./cuda_8.0.61_375.26_linux-run --silent --toolkit --override && \
     tar zxf cudnn-8.0-linux-x64-v6.0.tgz -C /usr/local/cuda-8.0 --strip-components=1 && \
     rm cuda_8.0.61_375.26_linux-run cuda_8.0.61.2_linux-run cudnn-8.0-linux-x64-v6.0.tgz
 
-COPY _deps/bazel-0.9.0-installer-linux-x86_64.sh .
-RUN bash bazel-0.9.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.9.0 && \
-    echo 'export PATH=$PATH:/opt/bazel-0.9.0/bin' > /etc/profile.d/bazel.sh && \
-    rm bazel-0.9.0-installer-linux-x86_64.sh
+COPY _deps/bazel-0.8.1-installer-linux-x86_64.sh .
+RUN bash bazel-0.8.1-installer-linux-x86_64.sh --prefix=/opt/bazel-0.8.1 && \
+    echo 'export PATH=$PATH:/opt/bazel-0.8.1/bin' > /etc/profile.d/bazel.sh && \
+    rm bazel-0.8.1-installer-linux-x86_64.sh
 
 COPY _deps/Miniconda3-4.3.30-Linux-x86_64.sh .
 RUN bash Miniconda3-4.3.30-Linux-x86_64.sh -b -f -p /opt/conda && \
