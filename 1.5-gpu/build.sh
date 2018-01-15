@@ -3,7 +3,7 @@ set -eu
 
 rm -rf ~/tensorflow
 
-git clone https://github.com/tensorflow/tensorflow.git -b r1.4 --depth 1 ~/tensorflow
+git clone https://github.com/tensorflow/tensorflow.git -b r1.5 --depth 1 ~/tensorflow
 
 cd ~/tensorflow
 

@@ -18,8 +18,8 @@ Download manual necessário:
 
 *  `./run.sh master gpu`: constrói pacote `master-gpu/tensorflow_gpu-1.6.0a0-cp36-cp36m-linux_x86_64.whl`
 *  `./run.sh master cpu`: constrói pacote `master-cpu/tensorflow-1.6.0a0-cp36-cp36m-linux_x86_64.whl`
-*  `./run.sh 1.5 gpu`: constrói pacote `1.5-gpu/tensorflow_gpu-1.5.0rc0-cp36-cp36m-linux_x86_64.whl`
-*  `./run.sh 1.5 cpu`: constrói pacote `1.5-cpu/tensorflow-1.5.0rc0-cp36-cp36m-linux_x86_64.whl`
+*  `./run.sh 1.5 gpu`: constrói pacote `1.5-gpu/tensorflow_gpu-1.5.0rc1-cp36-cp36m-linux_x86_64.whl`
+*  `./run.sh 1.5 cpu`: constrói pacote `1.5-cpu/tensorflow-1.5.0rc1-cp36-cp36m-linux_x86_64.whl`
 *  `./run.sh 1.4 gpu`: constrói pacote `1.4-gpu/tensorflow_gpu-1.4.1-cp36-cp36m-linux_x86_64.whl`
 *  `./run.sh 1.4 cpu`: constrói pacote `1.4-cpu/tensorflow-1.4.1-cp36-cp36m-linux_x86_64.whl`
 
