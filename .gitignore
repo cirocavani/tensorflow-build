@@ -6,7 +6,7 @@
 /_deps/Miniconda3-4.3.31-Linux-x86_64.sh
 /1.5-cpu/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl
 /1.5-gpu/tensorflow_gpu-1.5.0-cp36-cp36m-linux_x86_64.whl
-/1.6-cpu/tensorflow-1.6.0rc0-cp36-cp36m-linux_x86_64.whl
-/1.6-gpu/tensorflow_gpu-1.6.0rc0-cp36-cp36m-linux_x86_64.whl
+/1.6-cpu/tensorflow-1.6.0rc1-cp36-cp36m-linux_x86_64.whl
+/1.6-gpu/tensorflow_gpu-1.6.0rc1-cp36-cp36m-linux_x86_64.whl
 /master-cpu/tensorflow-1.7.0a0-cp36-cp36m-linux_x86_64.whl
 /master-gpu/tensorflow_gpu-1.7.0a0-cp36-cp36m-linux_x86_64.whl
