@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 ENV BASH_ENV /etc/profile
 SHELL ["/bin/bash", "-c"]
@@ -17,24 +19,24 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY _deps/cuda_8.0.61_375.26_linux-run .
-COPY _deps/cuda_8.0.61.2_linux-run .
-COPY _deps/cudnn-8.0-linux-x64-v6.0.tgz .
-RUN ./cuda_8.0.61_375.26_linux-run --silent --toolkit --override && \
-    ./cuda_8.0.61.2_linux-run --silent --accept-eula && \
-    tar zxf cudnn-8.0-linux-x64-v6.0.tgz -C /usr/local/cuda-8.0 --strip-components=1 && \
-    rm cuda_8.0.61_375.26_linux-run cuda_8.0.61.2_linux-run cudnn-8.0-linux-x64-v6.0.tgz
+COPY _deps/cuda_9.1.85_387.26_linux .
+COPY _deps/cuda_9.1.85.1_linux .
+COPY _deps/cudnn-9.1-linux-x64-v7.tgz .
+RUN ./cuda_9.1.85_387.26_linux --silent --toolkit --override && \
+    ./cuda_9.1.85.1_linux --silent --accept-eula && \
+    tar zxf cudnn-9.1-linux-x64-v7.tgz -C /usr/local/cuda-9.1 --strip-components=1 && \
+    rm cuda_9.1.85_387.26_linux cuda_9.1.85.1_linux cudnn-9.1-linux-x64-v7.tgz
 
-COPY _deps/bazel-0.8.1-installer-linux-x86_64.sh .
-RUN bash bazel-0.8.1-installer-linux-x86_64.sh --prefix=/opt/bazel-0.8.1 && \
-    echo 'export PATH=$PATH:/opt/bazel-0.8.1/bin' > /etc/profile.d/bazel.sh && \
-    rm bazel-0.8.1-installer-linux-x86_64.sh
+COPY _deps/bazel-0.10.0-installer-linux-x86_64.sh .
+RUN bash bazel-0.10.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.10.0 && \
+    echo 'export PATH=$PATH:/opt/bazel-0.10.0/bin' > /etc/profile.d/bazel.sh && \
+    rm bazel-0.10.0-installer-linux-x86_64.sh
 
-COPY _deps/Miniconda3-4.3.30-Linux-x86_64.sh .
-RUN bash Miniconda3-4.3.30-Linux-x86_64.sh -b -f -p /opt/conda && \
+COPY _deps/Miniconda3-4.3.31-Linux-x86_64.sh .
+RUN bash Miniconda3-4.3.31-Linux-x86_64.sh -b -f -p /opt/conda && \
     echo 'export PATH=$PATH:/opt/conda/bin' > /etc/profile.d/conda.sh && \
     /opt/conda/bin/conda install -q -y numpy && \
-    rm Miniconda3-4.3.30-Linux-x86_64.sh
+    rm Miniconda3-4.3.31-Linux-x86_64.sh
 
 RUN useradd -m tensorflow && \
     passwd -d tensorflow

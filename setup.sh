@@ -3,34 +3,34 @@ set -eu
 
 cd $(dirname "$0")
 
-if [ ! -f _deps/cudnn-8.0-linux-x64-v6.0.tgz ]; then
-    echo "Necessário cuDNN 6.0 para Cuda 8.0."
+if [ ! -f _deps/cudnn-9.1-linux-x64-v7.tgz ]; then
+    echo "Necessário cuDNN 7.0 para CUDA 8.1."
     echo "https://developer.nvidia.com/rdp/cudnn-download"
     exit 1
 fi
 
-if [ ! -f _deps/cuda_8.0.61_375.26_linux-run ]; then
+if [ ! -f _deps/cuda_9.1.85_387.26_linux ]; then
     curl -k -L \
-        https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run \
-        -o _deps/cuda_8.0.61_375.26_linux-run
-    chmod +x _deps/cuda_8.0.61_375.26_linux-run
+        https://developer.nvidia.com/compute/cuda/9.1/Prod/local_installers/cuda_9.1.85_387.26_linux \
+        -o _deps/cuda_9.1.85_387.26_linux
+    chmod +x _deps/cuda_9.1.85_387.26_linux
 fi
 
-if [ ! -f _deps/cuda_8.0.61.2_linux-run ]; then
+if [ ! -f _deps/cuda_9.1.85.1_linux ]; then
     curl -k -L \
-        https://developer.nvidia.com/compute/cuda/8.0/Prod2/patches/2/cuda_8.0.61.2_linux-run \
-        -o _deps/cuda_8.0.61.2_linux-run
-    chmod +x _deps/cuda_8.0.61.2_linux-run
+        https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/1/cuda_9.1.85.1_linux \
+        -o _deps/cuda_9.1.85.1_linux
+    chmod +x _deps/cuda_9.1.85.1_linux
 fi
 
-if [ ! -f _deps/bazel-0.8.1-installer-linux-x86_64.sh ]; then
+if [ ! -f _deps/bazel-0.10.0-installer-linux-x86_64.sh ]; then
     curl -k -L \
-        https://github.com/bazelbuild/bazel/releases/download/0.8.1/bazel-0.8.1-installer-linux-x86_64.sh \
-        -o _deps/bazel-0.8.1-installer-linux-x86_64.sh
+        https://github.com/bazelbuild/bazel/releases/download/0.10.0/bazel-0.10.0-installer-linux-x86_64.sh \
+        -o _deps/bazel-0.10.0-installer-linux-x86_64.sh
 fi
 
-if [ ! -f _deps/Miniconda3-4.3.30-Linux-x86_64.sh ]; then
+if [ ! -f _deps/Miniconda3-4.3.31-Linux-x86_64.sh ]; then
     curl -k -L \
-        https://repo.continuum.io/miniconda/Miniconda3-4.3.30-Linux-x86_64.sh \
-        -o _deps/Miniconda3-4.3.30-Linux-x86_64.sh
+        https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh \
+        -o _deps/Miniconda3-4.3.31-Linux-x86_64.sh
 fi
