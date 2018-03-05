@@ -23,10 +23,24 @@ if [ ! -f _deps/cuda_9.1.85.1_linux ]; then
     chmod +x _deps/cuda_9.1.85.1_linux
 fi
 
-if [ ! -f _deps/bazel-0.10.0-installer-linux-x86_64.sh ]; then
+if [ ! -f _deps/cuda_9.1.85.2_linux ]; then
     curl -k -L \
-        https://github.com/bazelbuild/bazel/releases/download/0.10.0/bazel-0.10.0-installer-linux-x86_64.sh \
-        -o _deps/bazel-0.10.0-installer-linux-x86_64.sh
+        https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/2/cuda_9.1.85.2_linux \
+        -o _deps/cuda_9.1.85.2_linux
+    chmod +x _deps/cuda_9.1.85.2_linux
+fi
+
+if [ ! -f _deps/cuda_9.1.85.3_linux ]; then
+    curl -k -L \
+        https://developer.nvidia.com/compute/cuda/9.1/Prod/patches/3/cuda_9.1.85.3_linux \
+        -o _deps/cuda_9.1.85.3_linux
+    chmod +x _deps/cuda_9.1.85.3_linux
+fi
+
+if [ ! -f _deps/bazel-0.11.0-installer-linux-x86_64.sh ]; then
+    curl -k -L \
+        https://github.com/bazelbuild/bazel/releases/download/0.11.0/bazel-0.11.0-installer-linux-x86_64.sh \
+        -o _deps/bazel-0.11.0-installer-linux-x86_64.sh
 fi
 
 if [ ! -f _deps/Miniconda3-4.3.31-Linux-x86_64.sh ]; then

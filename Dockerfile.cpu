@@ -19,10 +19,10 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY _deps/bazel-0.10.0-installer-linux-x86_64.sh .
-RUN bash bazel-0.10.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.10.0 && \
-    echo 'export PATH=$PATH:/opt/bazel-0.10.0/bin' > /etc/profile.d/bazel.sh && \
-    rm bazel-0.10.0-installer-linux-x86_64.sh
+COPY _deps/bazel-0.11.0-installer-linux-x86_64.sh .
+RUN bash bazel-0.11.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.11.0 && \
+    echo 'export PATH=$PATH:/opt/bazel-0.11.0/bin' > /etc/profile.d/bazel.sh && \
+    rm bazel-0.11.0-installer-linux-x86_64.sh
 
 COPY _deps/Miniconda3-4.3.31-Linux-x86_64.sh .
 RUN bash Miniconda3-4.3.31-Linux-x86_64.sh -b -f -p /opt/conda && \
