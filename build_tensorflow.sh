@@ -5,9 +5,9 @@ cd $(dirname "$0")
 
 TF_VERSION=$1
 TF_PROC=$2
-BUILD_HOME="$(pwd)/$TF_VERSION-$TF_PROC"
-BUILD_MOUNT="/home/tensorflow/$BUILD_HOME"
-IMAGE="tensorflow_$TF_PROC/build/ubuntu1604"
+BUILD_HOME="$(pwd)/$TF_VERSION"
+BUILD_MOUNT="/home/tensorflow/build"
+IMAGE_NAME="tensorflow_$TF_PROC/build/ubuntu1604"
 
 if [ ! -d "$BUILD_HOME" ]; then
     echo "Build not found: $BUILD_HOME"
@@ -23,5 +23,5 @@ docker run -t --rm \
     --user tensorflow \
     -e BUILD_MOUNT=$BUILD_MOUNT \
     -v $BUILD_HOME:$BUILD_MOUNT:rw \
-    $IMAGE \
-    /bin/bash $BUILD_MOUNT/build.sh
+    $IMAGE_NAME \
+    $BUILD_MOUNT/build.sh $TF_PROC

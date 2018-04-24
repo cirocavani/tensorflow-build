@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
         --no-install-recommends \
+        libcuda1-384 \
         build-essential \
         unzip \
         file \
@@ -23,24 +24,25 @@ COPY _deps/cuda_9.1.85_387.26_linux .
 COPY _deps/cuda_9.1.85.1_linux .
 COPY _deps/cuda_9.1.85.2_linux .
 COPY _deps/cuda_9.1.85.3_linux .
-COPY _deps/cudnn-9.1-linux-x64-v7.tgz .
+COPY _deps/cudnn-9.1-linux-x64-v7.1.tgz .
 RUN ./cuda_9.1.85_387.26_linux --silent --toolkit --override && \
     ./cuda_9.1.85.1_linux --silent --accept-eula && \
     ./cuda_9.1.85.2_linux --silent --accept-eula && \
     ./cuda_9.1.85.3_linux --silent --accept-eula && \
-    tar zxf cudnn-9.1-linux-x64-v7.tgz -C /usr/local/cuda-9.1 --strip-components=1 && \
-    rm cuda_9.1.85_387.26_linux cuda_9.1.85.1_linux cudnn-9.1-linux-x64-v7.tgz
+    tar zxf cudnn-9.1-linux-x64-v7.1.tgz -C /usr/local/cuda-9.1 --strip-components=1 && \
+    rm cuda_9.1.85_387.26_linux cuda_9.1.85.*_linux cudnn-9.1-linux-x64-v7.1.tgz
 
 COPY _deps/bazel-0.11.0-installer-linux-x86_64.sh .
 RUN bash bazel-0.11.0-installer-linux-x86_64.sh --prefix=/opt/bazel-0.11.0 && \
     echo 'export PATH=$PATH:/opt/bazel-0.11.0/bin' > /etc/profile.d/bazel.sh && \
     rm bazel-0.11.0-installer-linux-x86_64.sh
 
-COPY _deps/Miniconda3-4.3.31-Linux-x86_64.sh .
-RUN bash Miniconda3-4.3.31-Linux-x86_64.sh -b -f -p /opt/conda && \
+COPY _deps/Miniconda3-4.4.10-Linux-x86_64.sh .
+RUN bash Miniconda3-4.4.10-Linux-x86_64.sh -b -f -p /opt/conda && \
     echo 'export PATH=$PATH:/opt/conda/bin' > /etc/profile.d/conda.sh && \
+    /opt/conda/bin/conda update -q -y -n base conda && \
     /opt/conda/bin/conda install -q -y numpy && \
-    rm Miniconda3-4.3.31-Linux-x86_64.sh
+    rm Miniconda3-4.4.10-Linux-x86_64.sh
 
 RUN useradd -m tensorflow && \
     passwd -d tensorflow

@@ -3,8 +3,8 @@ set -eu
 
 cd $(dirname "$0")
 
-if [ ! -f _deps/cudnn-9.1-linux-x64-v7.tgz ]; then
-    echo "Necessário cuDNN 7.0 para CUDA 8.1."
+if [ ! -f _deps/cudnn-9.1-linux-x64-v7.1.tgz ]; then
+    echo "Required cuDNN 7.1 for CUDA 9.1."
     echo "https://developer.nvidia.com/rdp/cudnn-download"
     exit 1
 fi
@@ -43,8 +43,8 @@ if [ ! -f _deps/bazel-0.11.0-installer-linux-x86_64.sh ]; then
         -o _deps/bazel-0.11.0-installer-linux-x86_64.sh
 fi
 
-if [ ! -f _deps/Miniconda3-4.3.31-Linux-x86_64.sh ]; then
+if [ ! -f _deps/Miniconda3-4.4.10-Linux-x86_64.sh ]; then
     curl -k -L \
-        https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh \
-        -o _deps/Miniconda3-4.3.31-Linux-x86_64.sh
+        https://repo.continuum.io/miniconda/Miniconda3-4.4.10-Linux-x86_64.sh \
+        -o _deps/Miniconda3-4.4.10-Linux-x86_64.sh
 fi
