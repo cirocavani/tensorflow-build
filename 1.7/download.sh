@@ -3,6 +3,6 @@ set -eu
 
 rm -rf ~/tensorflow
 
-git clone https://github.com/tensorflow/tensorflow.git --depth 1 -b r1.7 ~/tensorflow
+git clone https://github.com/tensorflow/tensorflow.git --depth 1 -b v1.7.1 ~/tensorflow
 
 echo "TensorFlow download done!"

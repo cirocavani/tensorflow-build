@@ -1,6 +1,6 @@
 # TensorFlow Build
 
-Build of TensorFlow Master, 1.8rc1 and 1.7 on Docker with Ubuntu 16.04, GCC 5.4, Python 3.6, CUDA 9.1 and cuDNN 7.1.
+Build of TensorFlow Master, 1.8 and 1.7.1 on Docker with Ubuntu 16.04, GCC 5.4, Python 3.6, CUDA 9.1 and cuDNN 7.1.
 
 (old build documentation for TensorFlow 0.10 in Portuguese)
 
@@ -23,24 +23,24 @@ Manual download required:
 
 *  `./build_tensorflow.sh master gpu`: builds package `master/tensorflow_gpu-1.9.0a0-cp36-cp36m-linux_x86_64.whl`
 *  `./build_tensorflow.sh master cpu`: builds package `master/tensorflow-1.9.0a0-cp36-cp36m-linux_x86_64.whl`
-*  `./build_tensorflow.sh 1.8 gpu`: builds package `1.8/tensorflow_gpu-1.8.0rc1-cp36-cp36m-linux_x86_64.whl`
-*  `./build_tensorflow.sh 1.8 cpu`: builds package `1.8/tensorflow-1.8.0rc1-cp36-cp36m-linux_x86_64.whl`
-*  `./build_tensorflow.sh 1.7 gpu`: builds package `1.7/tensorflow_gpu-1.7.0-cp36-cp36m-linux_x86_64.whl`
-*  `./build_tensorflow.sh 1.7 cpu`: builds package `1.7/tensorflow-1.7.0-cp36-cp36m-linux_x86_64.whl`
+*  `./build_tensorflow.sh 1.8 gpu`: builds package `1.8/tensorflow_gpu-1.8.0-cp36-cp36m-linux_x86_64.whl`
+*  `./build_tensorflow.sh 1.8 cpu`: builds package `1.8/tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl`
+*  `./build_tensorflow.sh 1.7 gpu`: builds package `1.7/tensorflow_gpu-1.7.1-cp36-cp36m-linux_x86_64.whl`
+*  `./build_tensorflow.sh 1.7 cpu`: builds package `1.7/tensorflow-1.7.1-cp36-cp36m-linux_x86_64.whl`
 
 ## Install
 
 ```sh
 # Python install
-curl -k -L -O https://repo.continuum.io/miniconda/Miniconda3-4.4.10-Linux-x86_64.sh
-bash Miniconda3-4.4.10-Linux-x86_64.sh -b -f -p tensorflow-gpu
+curl -k -L -O https://repo.continuum.io/miniconda/Miniconda3-4.5.1-Linux-x86_64.sh
+bash Miniconda3-4.5.1-Linux-x86_64.sh -b -f -p tensorflow-gpu
 tensorflow-gpu/bin/conda update -y -q --all
 
 # TensorFlow install
-tensorflow-gpu/bin/pip install 1.7/tensorflow_gpu-1.7.0-cp36-cp36m-linux_x86_64.whl
+tensorflow-gpu/bin/pip install 1.8/tensorflow_gpu-1.8.0-cp36-cp36m-linux_x86_64.whl
 
 tensorflow-gpu/bin/python -c \
 'import tensorflow as tf; print(tf.__version__); print(tf.Session().run(tf.constant("Hello, World!")))'
-#> 1.7.0
+#> 1.8.0
 #> b'Hello, World!'
 ```

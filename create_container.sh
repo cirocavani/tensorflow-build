@@ -16,7 +16,7 @@ if [ ! -d "$BUILD_HOME" ]; then
 fi
 
 if [ ! -z "$(docker ps -q -a -f name=$CONTAINER_NAME$)" ]; then
-    docker rm $CONTAINER_NAME
+    docker rm -f $CONTAINER_NAME
 fi
 
 docker create -it \

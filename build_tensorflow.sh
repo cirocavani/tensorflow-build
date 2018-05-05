@@ -15,7 +15,7 @@ if [ ! -d "$BUILD_HOME" ]; then
 fi
 
 if [ ! -z "$(docker ps -q -a -f name=tensorflow_build$)" ]; then
-    docker rm tensorflow_build
+    docker rm -f tensorflow_build
 fi
 
 docker run -t --rm \
